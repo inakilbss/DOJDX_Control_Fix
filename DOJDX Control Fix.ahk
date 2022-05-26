@@ -7,19 +7,19 @@ shot := false
 
 #IfWinActive, DodonpachiDX
 {
-	z::
+	$z::
 		auto := true
 		If (not shot) {
 			Send {z down}
 		}
 	return
 	
-	z Up::
+	$z Up::
 		auto := false
 		Send {z up}
 	return
 
-	c::
+	$c::
 		shot := true
 		if (auto) {
 			Send {z up}
@@ -30,7 +30,7 @@ shot := false
 		}
 	return
 	
-	c Up::
+	$c Up::
 		shot := false
 		Send {v up}
 		if (auto) {
